@@ -1,0 +1,41 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout source code.
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./portfolio-carefreelife98
+
+      - name: Build
+        run: npm run build
+        working-directory: ./portfolio-carefreelife98
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - run: npm ci
+        working-directory: ./portfolio-carefreelife98
+        
+      - run: npm run build
+        working-directory: ./portfolio-carefreelife98
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./portfolio-carefreelife98/build
