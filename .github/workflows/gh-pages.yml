@@ -25,8 +25,7 @@ jobs:
             ${{ runner.os }}-node-
         
       - name: Use Github Secrets
-        run: echo "REACT_APP_GITHUB_TOKEN = ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}" > .env.local
-        working-directory: ./portfolio-carefreelife98
+        run: echo "REACT_APP_GITHUB_TOKEN = ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}" > ./portfolio-carefreelife98/.env.local
 
       - name: Build
         run: npm run build
