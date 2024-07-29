@@ -16,10 +16,6 @@ jobs:
         run: npm install --legacy-peer-deps
         working-directory: ./portfolio-carefreelife98
 
-      - name: Build
-        run: npm run build
-        working-directory: ./portfolio-carefreelife98
-
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
@@ -27,11 +23,17 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
-      - run: npm ci
-        working-directory: ./portfolio-carefreelife98
         
-      - run: npm run build
+      - name: Use Github Secrets
+        run: echo "REACT_APP_GITHUB_TOKEN = ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}" > .env.local
+        working-directory: ./portfolio-carefreelife98
+
+      - name: Build
+        run: npm run build
+        working-directory: ./portfolio-carefreelife98
+
+      - name: Remove Used Github Secrets
+        run: rm -rf .env.local
         working-directory: ./portfolio-carefreelife98
 
       - name: Deploy
