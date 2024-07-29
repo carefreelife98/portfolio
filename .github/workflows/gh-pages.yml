@@ -12,14 +12,6 @@ jobs:
       - name: Checkout source code.
         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
-        working-directory: ./portfolio-carefreelife98
-
-      - name: Build
-        run: npm run build
-        working-directory: ./portfolio-carefreelife98
-
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
@@ -28,10 +20,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm ci
+      - name: Install dependencies
+        run: npm ci
         working-directory: ./portfolio-carefreelife98
-        
-      - run: npm run build
+    
+      - name: Build
+        run: npm run build
         working-directory: ./portfolio-carefreelife98
 
       - name: Deploy
