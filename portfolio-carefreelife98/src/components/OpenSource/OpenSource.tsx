@@ -5,16 +5,18 @@ import GithubCard from '../GithubCard/GithubCard';
 import { openSourceProjects } from '../../portfolio';
 
 function OpenSource() {
+    const uri = "https://api.github.com/graphql";
+
     const [ repos, setRepos ] = useState([]);
 
     useEffect(() => {
-        getRepoData();
-    }, []);
+        getRepoData(uri);
+    }, [uri]);
 
-    function getRepoData(): void {
+    function getRepoData(uri: string): void {
         // I don't know well about this part...
         const client = new ApolloClient({
-            uri: "https://api.github.com/graphql",
+            uri: uri,
             request: (operation) => {
                 operation.setContext({
                     headers: {
