@@ -11,7 +11,7 @@ function OpenSource() {
         request: (operation) => {
             operation.setContext({
                 headers: {
-                    authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
+                    authorization: `Bearer ${window.REACT_APP_GITHUB_TOKEN}`,
                 },
             });
         },
