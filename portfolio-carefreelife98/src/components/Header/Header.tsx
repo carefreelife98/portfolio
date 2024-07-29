@@ -22,12 +22,16 @@ function Header() {
 
 				<div className="header-logo">
 					<span>&lt;</span>
-					<a href="#!">{greeting.username}</a>
+					<a href="#!" aria-label="username">{greeting.username}
+						<span className="visually-hidden">temp</span>
+					</a>
 					<span>/&gt;</span>
 				</div>
-				
+
 				<div className="icon">
-					<a href="#toggle-nav" className="icon fas fa-bars" onClick={onClickMenu}></a>
+					<a href="#toggle-nav" className="icon fas fa-bars" onClick={onClickMenu} aria-label="icon">
+						<span className="visually-hidden">temp</span>
+					</a>
 				</div>
 
 				<ul className="nav-menu" id="toggle-nav">
