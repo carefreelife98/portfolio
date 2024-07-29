@@ -35,7 +35,6 @@ jobs:
       - name: Inject API key
         run: |
           echo "<script>window.REACT_APP_GITHUB_TOKEN='${{ secrets.REACT_APP_GITHUB_TOKEN }}'</script>" >> ./portfolio-carefreelife98/build/index.html
-        working-directory: ./portfolio-carefreelife98
 
       # - name: Remove Used Github Secrets
       #   run: rm -rf .env.local
