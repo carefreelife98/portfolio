@@ -1,10 +1,10 @@
 import './style.css';
-import {useLocation, useNavigate, useParams} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {
     MAIN_PATH,
 } from "../../constants";
-import {ChangeEvent, KeyboardEvent, useEffect, useRef, useState} from "react";
-import * as path from "path";
+import {useEffect, useState} from "react";
+// import * as path from "path";
 
 //         component: 헤더 레이아웃          //
 export default function Header() {
