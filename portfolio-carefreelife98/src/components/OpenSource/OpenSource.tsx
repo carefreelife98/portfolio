@@ -3,7 +3,6 @@ import ApolloClient, { gql } from 'apollo-boost';
 import './OpenSource.css';
 import GithubCard from '../GithubCard/GithubCard';
 import { openSourceProjects } from '../../portfolio';
-import App from "../../App";
 
 function OpenSource() {
 
@@ -21,7 +20,7 @@ function OpenSource() {
     const [ repos, setRepos ] = useState([]);
 
     useEffect(() => {
-        getRepoData(client);
+        getRepoData(client);         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [client]);
 
     function getRepoData(client: ApolloClient<any>): void {
