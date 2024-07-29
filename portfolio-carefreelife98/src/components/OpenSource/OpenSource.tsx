@@ -29,7 +29,7 @@ function OpenSource() {
             .query({
                 query: gql`
                 {
-                user(login: "ikalli") {
+                user(login: "carefreelife98") {
                     pinnedItems(first: 6, types: [REPOSITORY]) {
                         totalCount
                         edges {
