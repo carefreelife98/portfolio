@@ -12,14 +12,13 @@ jobs:
       - name: Checkout source code.
         uses: actions/checkout@v2
 
-      - name: cd portfolio-carefreelife98
-        run: cd portfolio-carefreelife98
-
       - name: Install dependencies
         run: npm install
+        working-directory: ./portfolio-carefreelife98
 
       - name: Build
         run: npm run build
+        working-directory: ./portfolio-carefreelife98
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -30,10 +29,13 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm ci
+        working-directory: ./portfolio-carefreelife98
+        
       - run: npm run build
+        working-directory: ./portfolio-carefreelife98
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./portfolio-carefreelife98/build
