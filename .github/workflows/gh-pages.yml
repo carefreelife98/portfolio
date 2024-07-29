@@ -12,6 +12,9 @@ jobs:
       - name: Checkout source code.
         uses: actions/checkout@v2
 
+      - name: cd portfolio-carefreelife98
+        run: cd portfolio-carefreelife98
+
       - name: Install dependencies
         run: npm install
 
