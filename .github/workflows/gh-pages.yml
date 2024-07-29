@@ -24,21 +24,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
         
-      # - name: Use Github Secrets
-      #   run: echo "REACT_APP_GITHUB_TOKEN = ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}" > .env.local
-      #   working-directory: ./portfolio-carefreelife98
+      - name: Use Github Secrets
+        run: echo "REACT_APP_GITHUB_TOKEN = ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}" > .env.local
+        working-directory: ./portfolio-carefreelife98
 
       - name: Build
         run: npm run build
         working-directory: ./portfolio-carefreelife98
 
-      - name: Inject API key
-        run: |
-          echo "<script>window.REACT_APP_GITHUB_TOKEN='${{ secrets.REACT_APP_GITHUB_TOKEN }}'</script>" >> ./portfolio-carefreelife98/build/index.html
-
-      # - name: Remove Used Github Secrets
-      #   run: rm -rf .env.local
-      #   working-directory: ./portfolio-carefreelife98
+      - name: Remove Used Github Secrets
+        run: rm -rf .env.local
+        working-directory: ./portfolio-carefreelife98
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
