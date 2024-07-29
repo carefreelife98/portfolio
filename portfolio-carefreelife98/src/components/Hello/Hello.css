@@ -1,0 +1,141 @@
+.section--hello {
+	position: relative;
+	padding: 5vh 20px;
+	margin-top: 100px;
+	margin-bottom: 0;
+	text-align: center;
+	height: 90vh;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.section--hello .inner {
+	max-width: 1600px;
+	margin: 0 auto;
+}
+.section--hello .wrapper {
+	color: #f1f2f3;
+}
+.section--hello .text-title {
+	font-size: 90px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+}
+.section--hello .text-title .hello-emoji {
+	display: inline-block;
+	transform-origin: 80% 80%;
+	animation: hello 1.8s linear infinite;
+}
+.section--hello .role {
+	margin-top: 70px;
+	font-size: 35px;
+	color: #f1f2f3;
+}
+.section--hello .text-subtitle {
+	font-weight: 300;
+	color: #c1c2c3;
+	margin-top: 50px;
+	font-size: 25px;
+	line-height: 1.5;
+}
+.section--hello .social-links {
+	margin-top: 50px;
+}
+.section--hello .wrapper-links {
+	margin-top: 50px;
+}
+.section--hello .wrapper-links > * {
+	display: inline-block;
+	text-decoration: none;
+	font-size: 22px;
+	color: #c1c2c3;
+	padding: 20px 30px;
+	border: 2px solid #c1c2c3;
+	margin-right: 20px;
+	border-radius: 16px;
+	text-align: center;
+	transition: 0.3s ease-out;
+}
+.section--hello .wrapper-links > *:hover {
+	background-color: #ffffff;
+	color: #1f1f1f;
+	border-color: #ffffff;
+}
+#resume {
+	margin-right: 0;
+}
+
+@keyframes hello {
+	0% {transform: rotate(0deg);}
+	10% {transform: rotate(-10deg);}
+	20% {transform: rotate(12deg);}
+	30% {transform: rotate(-10deg);}
+	40% {transform: rotate(9deg);}
+	50% {transform: rotate(0deg);}
+	100% {transform: rotate(0deg);}
+}
+
+@media screen and (max-width:1380px) {
+	.section--hello {
+		margin-top: 80px;
+	}
+	.section--hello .wrapper {
+		min-width: 480px;
+	}
+	.section--hello .text-title {
+		font-size: 55px;
+	}
+	.section--hello .role {
+		font-size: 25px;
+	}
+	.section--hello .text-subtitle {
+		margin-top: 30px;
+		font-size: 20px;
+	}
+	.section--hello .wrapper-links > * {
+		font-size: 20px;
+	}
+}
+@media screen and (max-width: 980px) {
+	.section--hello {
+		margin-top: 60px;
+	}
+}
+@media screen and (max-width:768px) {
+	.section--hello {
+		margin-top: 80px;
+		padding: 5vh 20px;
+	}
+	.section--hello .inner {
+		display: block;
+	}
+	.section--hello .wrapper {
+		min-width: auto;
+	}
+	.section--hello .text-title {
+		font-size: 36px;
+	}
+	.section--hello .role {
+		margin-top: 30px;
+	}
+	.section--hello .social-links {
+		width: fit-content;
+		margin: 0 auto;
+	}
+	.section--hello .wrapper-links > * {
+		max-width: 70%;
+		display: block;
+		padding: 20px 0;
+		font-size: 18px;
+		background-color: #242526;
+	}
+	#about {
+		margin: 0 auto;
+	}
+	#resume {
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+}

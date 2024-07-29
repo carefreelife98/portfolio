@@ -3,7 +3,7 @@ import './App.css';
 import {MAIN_PATH} from "./constants";
 import {Route, Routes} from "react-router-dom";
 import Container from "./layouts/Container";
-import Main from "./views";
+import Main from "./components/main";
 
 function App() {
   return (

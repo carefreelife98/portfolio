@@ -1,0 +1,38 @@
+.expcard-main {
+    border-radius: 10px;
+    box-shadow: 13px 13px 6px rgba(0,0,0,0.2);
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #212223;
+    color: #f1f2f3;
+    font-size: 25px;
+    text-align: center;
+    transition: 0.3s ease-out;
+}
+.expcard-main:hover {
+    box-shadow: 0 4px 8px rgba(38,38,38,0.2);
+}
+.expcard-main .expcard-role {
+    font-weight: 500;
+}
+.expcard-main .expcard-company {
+    margin-top: 30px;
+}
+.expcard-main .expcard-date {
+    font-size: 20px;
+    margin-top: 30px;
+    font-weight: 300;
+    color: #c1c2c3;
+}
+
+@media screen and (max-width: 1380px) {
+    .expcard-main .expcard-role {
+        font-size: 22px;
+    }
+    .expcard-main .expcard-company {
+        font-size: 19px;
+    }
+    .expcard-main .expcard-date {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,81 @@
+.section--contact {
+    margin: 50px 0;
+    padding: 110px 20px 0;
+}
+.section--contact .contact-title {
+    max-width: 1600px;
+    margin: 0 auto;
+    font-size: 60px;
+    color: #f1f2f3;
+}
+.section--contact .inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.section--contact .wrapper-inner {
+    flex: 85% 1;
+}
+.section--contact .contact-subtitle {
+    font-size: 25px;
+    color: #c1c2c3;
+    margin-top: 50px;
+    font-weight: 300;
+}
+.section--contact .contact-introduce {
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #c1c2c3;
+}
+.section--contact .social-links {
+    margin-top: 50px;
+}
+.section--contact .profile-img {
+    flex: 15% 1;
+    text-align: right;
+}
+.section--contact .profile-img img {
+    max-width: 250px;
+    height: auto;
+    border: 5px solid #212223;
+    border-radius: 100%;
+    box-shadow: 0px 5px 12px 5px rgba(0,0,0,0.3);
+}
+
+.section--contact .profile-img img:hover {
+    transition: 0.2s ease-out;
+    box-shadow: 0 4px 8px rgba(38,38,38,0.2);
+}
+
+@media screen and (max-width: 1380px) {
+    .section--contact {
+        padding: 90px 20px 0;
+    }
+    .section--contact .contact-title {
+        font-size: 45px;
+    }
+    .section--contact .contact-subtitle {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section--contact .contact-title {
+        font-size: 32px;
+        font-weight: 500;
+        text-align: center;
+    }
+    .section--contact .inner {
+        display: block;
+        margin-bottom: 40px;
+    }
+    .section--contact .profile-img {
+        margin-top: 30px;
+        text-align: center;
+    }
+    .section--contact .wrapper-inner {
+        text-align: center;
+    }
+}

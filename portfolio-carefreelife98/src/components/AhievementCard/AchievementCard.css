@@ -1,0 +1,47 @@
+.achieve-card {
+    background-color: #212223;
+    border-radius: 10px;
+    box-shadow: 13px 13px 6px rgba(0,0,0,0.2);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+.achieve-card:hover {
+    transition: 0.3s ease-out;
+    box-shadow: 0 4px 8px rgba(38,38,38,0.2);
+}
+.achieve-card .achieve-card-img img{
+    display: block;
+    max-width: 250px;
+    height: auto;
+    margin: 0 auto;
+}
+.achieve-card .achieve-card-title {
+    margin-top: 20px;
+    font-size: 25px;
+    color: #f1f2f3;
+    font-weight: 500;
+    text-align: center;
+}
+.achieve-card .achieve-card-desc {
+    line-height: 1.4;
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    color: #c1c2c3;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 1380px) {
+    .achieve-card .achieve-card-title {
+        font-size: 22px;
+    }
+    .achieve-card .achieve-card-desc {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .achieve-card .achieve-card-img img {
+        max-width: 180px;
+    }
+} 

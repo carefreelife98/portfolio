@@ -1,7 +1,7 @@
 import './style.css';
 
 //          component: 메인 화면 컴포넌트          //
-export default function Main() {
+export default function MainTemp() {
 
     //          render: 메인 화면 렌더링          //
     return (

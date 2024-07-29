@@ -19,10 +19,19 @@
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
-  min-width: 1440px;
-  font-family: 'Pretendard-Regular';
+  background-color: #121314;
+  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
 }
