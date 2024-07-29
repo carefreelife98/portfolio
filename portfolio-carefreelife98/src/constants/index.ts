@@ -1,1 +1,1 @@
-export const MAIN_PATH = () => '/portfolio';
+export const MAIN_PATH = () => '/';

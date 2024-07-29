@@ -10,7 +10,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-      <BrowserRouter basename='/'>
+      {/* PUBLIC_URL 은 package.json의 homepage URL값으로 설정됨 */}
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App />
       </BrowserRouter>
   </React.StrictMode>
