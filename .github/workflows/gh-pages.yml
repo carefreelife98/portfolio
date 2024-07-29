@@ -12,6 +12,14 @@ jobs:
       - name: Checkout source code.
         uses: actions/checkout@v2
 
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+        working-directory: ./portfolio-carefreelife98
+
+      - name: Build
+        run: npm run build
+        working-directory: ./portfolio-carefreelife98
+
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
@@ -19,13 +27,8 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
-      - name: Install dependencies
-        run: npm ci
-        working-directory: ./portfolio-carefreelife98
-    
-      - name: Build
-        run: npm run build
+        
+      - run: npm run build
         working-directory: ./portfolio-carefreelife98
 
       - name: Deploy
