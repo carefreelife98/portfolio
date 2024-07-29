@@ -3,28 +3,28 @@ import ApolloClient, { gql } from 'apollo-boost';
 import './OpenSource.css';
 import GithubCard from '../GithubCard/GithubCard';
 import { openSourceProjects } from '../../portfolio';
+import App from "../../App";
 
 function OpenSource() {
-    const uri = "https://api.github.com/graphql";
+
+    const client = new ApolloClient({
+        uri: "https://api.github.com/graphql",
+        request: (operation) => {
+            operation.setContext({
+                headers: {
+                    authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
+                },
+            });
+        },
+    });
 
     const [ repos, setRepos ] = useState([]);
 
     useEffect(() => {
-        getRepoData(uri);
-    }, [uri]);
+        getRepoData(client);
+    }, [client]);
 
-    function getRepoData(uri: string): void {
-        // I don't know well about this part...
-        const client = new ApolloClient({
-            uri: uri,
-            request: (operation) => {
-                operation.setContext({
-                    headers: {
-                        authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
-                    },
-                });
-            },
-        });
+    function getRepoData(client: ApolloClient<any>): void {
       
         client
             .query({
