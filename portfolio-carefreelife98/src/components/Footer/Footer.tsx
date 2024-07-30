@@ -8,8 +8,8 @@ function Footer() {
             <div className="inner">
 
                 <div className="footer-content">
-                    <p>{emoji("Make By Username💙")}</p>
-                    <p style={{marginTop: "15px"}}>Theme By <a href="https://github.com/Ikalli/ReactFolio">ReactFolio</a></p>
+                    <p>{emoji("Make By CarefreeLife98")}</p>
+                    <p style={{marginTop: "15px"}}>Theme By <a href="https://github.com/Ikalli/ReactFolio" style={{fontSize: "10px"}}>ReactFolio</a></p>
                 </div>
 
             </div>
