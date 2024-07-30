@@ -8,7 +8,7 @@ function OpenSource() {
     const [ repos, setRepos ] = useState([]);
 
     useEffect(() => {
-        getRepoData();
+        getRepoData(); // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     function getRepoData(): void {
