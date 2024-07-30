@@ -26,7 +26,7 @@ function OpenSource() {
             request: (operation) => {
                 operation.setContext({
                     headers: {
-                        authorization: encoded,
+                        authorization: decoded,
                     },
                 });
             },
