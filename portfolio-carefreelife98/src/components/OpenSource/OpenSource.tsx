@@ -11,13 +11,13 @@ function OpenSource() {
         getRepoData(); // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    function encodeBase64(input: string): string {
-        return btoa(input);
+    function decodeBase64(input: string): string {
+        return atob(input);
     }
 
     const githubSecrets: string | undefined = process.env.REACT_APP_GITHUB_TOKEN;
-    const encoded: string = 'Bearer ' + encodeBase64(githubSecrets as string);
-    console.log("Encoded:", encoded);
+    const decoded: string = 'Bearer ' + decodeBase64(githubSecrets as string);
+    console.log("Encoded:", decoded);
 
     function getRepoData(): void {
         // I don't know well about this part...
