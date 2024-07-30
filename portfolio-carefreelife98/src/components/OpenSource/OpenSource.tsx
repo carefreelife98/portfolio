@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import ApolloClient, { gql } from 'apollo-boost';
+import React, { useState } from 'react';
+import axios from 'axios';
 import './OpenSource.css';
 import GithubCard from '../GithubCard/GithubCard';
 import { openSourceProjects } from '../../portfolio';
@@ -7,85 +7,63 @@ import { openSourceProjects } from '../../portfolio';
 function OpenSource() {
     const [ repos, setRepos ] = useState([]);
 
-    useEffect(() => {
-        getRepoData(); // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    // GitHub GraphQL API 엔드포인트
+    const GITHUB_GRAPHQL_API = 'https://api.github.com/graphql';
 
-    function decodeBase64(input: string): string {
-        // 브라우저 환경
-        if (typeof window !== 'undefined' && typeof window.atob === 'function') {
-            return atob(input);
-        }
-
-        // Node.js 환경
-        return Buffer.from(input, 'base64').toString('utf-8');
-    }
-
-    const githubToken: string | undefined = process.env.REACT_APP_GITHUB_TOKEN;
-
-    var decoded: string = ''
-    if (githubToken) {
-        decoded = 'Bearer ' + decodeBase64(githubToken);
-        console.log("Decoded:", decoded);
-    } else {
-        console.error("Environment variable REACT_APP_GITHUB_TOKEN is not set or is empty.");
-    }
-
-    function getRepoData(): void {
-        // I don't know well about this part...
-        const client = new ApolloClient({
-            uri: "https://api.github.com/graphql",
-            request: (operation) => {
-                operation.setContext({
-                    headers: {
-                        authorization: decoded,
-                    },
-                });
-            },
-        });
-
-        client
-            .query({
-                query: gql`
-                {
-                user(login: "carefreelife98") {
-                    pinnedItems(first: 6, types: [REPOSITORY]) {
-                        totalCount
-                        edges {
-                            node {
-                                ... on Repository {
-                                    name
-                                    description
-                                    forkCount
-                                    stargazers {
-                                        totalCount
-                                    }
-                                    url
-                                    id
-                                    diskUsage
-                                    primaryLanguage {
-                                        name
-                                        color
-                                    }
-                                }
-                            }
-                        }
+// GraphQL 쿼리
+    const GET_REPOSITORIES_QUERY =
+        `
+          query {
+            user(login: "carefreelife98") { // 사용자명을 자신의 GitHub 사용자명으로 변경하세요.
+              repositories(first: 10) {
+                edges {
+                  node {
+                    url
+                    name
+                    description
+                    primaryLanguage {
+                      color
+                      name
                     }
+                    stargazers {
+                      totalCount
+                    }
+                    forkCount
+                    diskUsage
+                  }
                 }
+              }
             }
-            `,
-            })
-            .then((result) => {
-                setrepoFunction(result.data.user.pinnedItems.edges);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+          }
+        `;
+
+// API 호출 함수
+    async function fetchRepositories() {
+        try {
+            const response = await axios.post(
+                GITHUB_GRAPHQL_API,
+                { query: GET_REPOSITORIES_QUERY },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        // 'Authorization': `Bearer YOUR_PERSONAL_ACCESS_TOKEN`, // 비공개 데이터를 가져오려면 토큰을 여기에 추가하세요.
+                    },
+                }
+            );
+
+            const repos = response.data.data.user.repositories.edges.map((edge) => edge.node);
+            return repos;
+        } catch (error) {
+            console.error('Error fetching repositories:', error);
+            return [];
+        }
     }
 
-    function setrepoFunction(arr: []): void {
-        setRepos(arr);
-    }
+    fetchRepositories().then((repos) => {
+        if(repos.length > 6) repos.slice(0, 6);
+        setRepos(repos)
+    });
+
     return (
         <div className="main" id="opensource">
             <h1 className="project-title">{openSourceProjects.title}</h1>
