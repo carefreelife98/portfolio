@@ -8,6 +8,28 @@ function OpenSource() {
     const [ repos, setRepos ] = useState([]);
 
     useEffect(() => {
+        // API 호출 함수
+        async function fetchRepositories() {
+            try {
+                const response = await axios.post(
+                    GITHUB_GRAPHQL_API,
+                    { query: GET_REPOSITORIES_QUERY },
+                    {
+                        headers: {
+                            'Content-Type': 'application/json',
+                            // 'Authorization': `Bearer YOUR_PERSONAL_ACCESS_TOKEN`, // 비공개 데이터를 가져오려면 토큰을 여기에 추가하세요.
+                        },
+                    }
+                );
+
+                const repos = response.data.data.user.repositories.edges.map((edge: { node: any; }) => edge.node);
+                return repos;
+            } catch (error) {
+                console.error('Error fetching repositories:', error);
+                return [];
+            }
+        }
+
         fetchRepositories().then((repos) => {
             if (!repos) {
                 console.error('Github API Fetch 작업 실패 :: repos=' + repos.toString())
@@ -48,28 +70,6 @@ function OpenSource() {
             }
           }
         `;
-
-// API 호출 함수
-    async function fetchRepositories() {
-        try {
-            const response = await axios.post(
-                GITHUB_GRAPHQL_API,
-                { query: GET_REPOSITORIES_QUERY },
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        // 'Authorization': `Bearer YOUR_PERSONAL_ACCESS_TOKEN`, // 비공개 데이터를 가져오려면 토큰을 여기에 추가하세요.
-                    },
-                }
-            );
-
-            const repos = response.data.data.user.repositories.edges.map((edge: { node: any; }) => edge.node);
-            return repos;
-        } catch (error) {
-            console.error('Error fetching repositories:', error);
-            return [];
-        }
-    }
 
     return (
         <div className="main" id="opensource">
