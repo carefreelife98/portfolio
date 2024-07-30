@@ -13,6 +13,11 @@
     transition: 0.3s ease-out;
 }
 
+.project-card-main:hover {
+    box-shadow: 0 4px 8px rgba(38,38,38,0.2);
+    background-color: #4a4b4c;
+}
+
 .project-card-main-disabled {
     display: block;
     border-radius: 10px;
@@ -27,10 +32,6 @@
     transition: 0.3s ease-out;
 }
 
-.project-card-main:hover {
-    box-shadow: 0 4px 8px rgba(38,38,38,0.2);
-    background-color: #4a4b4c;
-}
 .project-card-main .card-title {
     font-size: 25px;
     font-weight: 500;
@@ -40,7 +41,6 @@
     font-size: 25px;
     font-weight: 500;
 }
-
 
 .project-card-main .card-desc {
     line-height: 1.4;
@@ -63,7 +63,6 @@
     font-size: 20px;
     font-weight: 300;
     color: #c1c2c3;
-    cursor: pointer; /* 스크롤 가능 힌트 */
     /* 삭제할 부분 */
     /* display: -webkit-inline-box; */
     /* -webkit-box-orient: vertical; */
