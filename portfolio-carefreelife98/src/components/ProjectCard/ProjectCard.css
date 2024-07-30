@@ -12,6 +12,21 @@
     text-decoration: none;
     transition: 0.3s ease-out;
 }
+
+.project-card-main-disabled {
+    display: block;
+    border-radius: 10px;
+    box-shadow: 13px 13px 6px rgba(0,0,0,0.2);
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #212223;
+    color: #f1f2f3;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s ease-out;
+}
+
 .project-card-main:hover {
     box-shadow: 0 4px 8px rgba(38,38,38,0.2);
     background-color: #4a4b4c;
