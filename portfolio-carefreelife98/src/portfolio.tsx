@@ -65,21 +65,6 @@ export const experience = {
 			company: "Qoo10 Technologies - TMON",
 			role: "Channel Service Dev. Team, Backend Engineer",
 		},
-		// {
-		// 	date: "test",
-		// 	company: "test",
-		// 	role: "test",
-		// },
-		// {
-		// 	date: "test",
-		// 	company: "test",
-		// 	role: "test",
-		// },
-		// {
-		// 	date: "test",
-		// 	company: "test",
-		// 	role: "test",
-		// }
 	],
 	view: true
 }
@@ -94,15 +79,35 @@ export const projects = {
 	subTitle: "Recent Projects",
 	lists: [
 		{
-			title: "Couchbase 기반의 Validation 용 문서 관리",
-			desc: "작성 예정입니다.",
+			title: "Smart Barricade",
+			type: "개인 프로젝트",
+			desc: "우회전 교통사고 방지를 위한 전자 방지턱 시스템",
+			url: "https://carefreelife98.github.io/inu-capstone/capstone-admin-server/"
+		},
+		{
+			title: "[CJ Olivenetworks - Cloud Wave 1기] CGV Fast Order",
+			type: "팀 프로젝트",
+			desc: "[패스트오더] 서비스의 AWS 인프라 현황을 기반으로 대규모 사용자가 동시에 사용하는데 무리가 없는 인프라 아키텍처를 설계.",
+			url: "https://carefreelife98.github.io/Cloud-Wave-Project/"
+		},
+		{
+			title: "Carefree OCR v2: 우체국 등기 영수증 / 사업자 등록증 자동 관리 시스템",
+			type: "개인 프로젝트",
+			desc: "AWS / NCP 퍼블릭 클라우드 서비스를 활용하여 우체국 등기 영수증 / 사업자 등록증 자동 관리 시스템 구축",
+			url: "https://carefreelife98.github.io/toy-project/carefreeOCR2/"
+		},
+		{
+			title: "Couchbase 를 통한 문서 관리 및 통합 데이터 유효성 검증 프로젝트",
+			type: "실무 프로젝트",
+			desc: "규모: 약 10 개 팀 관여. 기술 스택: Java / Spring / MySQL, MyBatis / Couchbase / Ehcache, Memcached ...etc 담당 업무: 비즈니스 로직에 따른 DB 접근 시 CB 문서 존재 여부 확인 및 유효성 검증 후 결과 값의 캐싱.",
 			url: "#"
 		},
 		{
 			title: "홈 화면의 배너 이미지 외부 연동",
+			type: "실무 프로젝트",
 			desc: "작성 예정입니다.",
 			url: "#"
-		}
+		},
 	],
 	view: true
 }
@@ -135,18 +140,18 @@ export const blogs = {
 	subTitle: "Hosted by Github Pages",
 	lists: [
 		{
-			title: "Smart Barricade",
-			desc: "2024 INU CSE 졸업작품",
-			url: "https://carefreelife98.github.io/inu-capstone/capstone-admin-server/"
+			title: "[AWS] Public Cloud / Cloud Architecture",
+			desc: "퍼블릭 클라우드와 AWS Cloud Architecture",
+			url: "https://carefreelife98.github.io/cloud-wave-public/Public/"
 		},
 		{
-			title: "Carefree OCR v2: 우체국 등기 영수증 / 사업자 등록증 자동 관리 시스템",
-			desc: "퍼블릭 클라우드 서비스를 활용하여 우체국 등기 영수증 / 사업자 등록증 자동 관리 시스템 구축",
-			url: "https://carefreelife98.github.io/toy-project/carefreeOCR2/"
+			title: "Cloud Native & Kubernetes 시작하기",
+			desc: "쿠버네티스 (Kubernetes, K8s) 란 무엇이며, 사용하는 이유와 기본 구성",
+			url: "https://carefreelife98.github.io/cloud-wave-kubernetes/Day23-Kubernetes/"
 		},
 		{
-			title: "[CI/CD] CGV Fast Order 시스템 인프라 구축: Github Action - Docker / ArgoCD",
-			desc: "대규모 트래픽을 가진 어플리케이션의 K8s 클러스터 내 무중단 배포를 위한 CI/CD Pipeline 구축",
+			title: "[Data Structure] 선택 정렬(Selection Sort) / 삽입 정렬(Insertion Sort) / 버블 정렬(Bubble Sort)",
+			desc: "정렬의 정의 및 선택 / 삽입 / 버블 정렬에 대한 학습 내용",
 			url: "https://carefreelife98.github.io/cloud-wave-project/project2_ci_githubActions_docker/"
 		},
 	],
