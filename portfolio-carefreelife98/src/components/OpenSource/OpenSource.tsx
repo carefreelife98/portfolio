@@ -12,12 +12,24 @@ function OpenSource() {
     }, []);
 
     function decodeBase64(input: string): string {
-        return atob(input);
+        // 브라우저 환경
+        if (typeof window !== 'undefined' && typeof window.atob === 'function') {
+            return atob(input);
+        }
+
+        // Node.js 환경
+        return Buffer.from(input, 'base64').toString('utf-8');
     }
 
-    const githubSecrets: string | undefined = process.env.REACT_APP_GITHUB_TOKEN;
-    const decoded: string = 'Bearer ' + decodeBase64(githubSecrets as string);
-    console.log("Encoded:", decoded);
+    const githubToken: string | undefined = process.env.REACT_APP_GITHUB_TOKEN;
+
+    var decoded: string = ''
+    if (githubToken) {
+        decoded = 'Bearer ' + decodeBase64(githubToken);
+        console.log("Decoded:", decoded);
+    } else {
+        console.error("Environment variable REACT_APP_GITHUB_TOKEN is not set or is empty.");
+    }
 
     function getRepoData(): void {
         // I don't know well about this part...
