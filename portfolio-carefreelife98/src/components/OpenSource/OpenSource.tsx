@@ -8,6 +8,36 @@ function OpenSource() {
     const [ repos, setRepos ] = useState([]);
 
     useEffect(() => {
+        // GitHub GraphQL API 엔드포인트
+        const GITHUB_GRAPHQL_API = 'https://api.github.com/graphql';
+
+        // GraphQL 쿼리
+        const GET_REPOSITORIES_QUERY =
+            `
+          query {
+            user(login: "carefreelife98") { // 사용자명을 자신의 GitHub 사용자명으로 변경하세요.
+              repositories(first: 10) {
+                edges {
+                  node {
+                    url
+                    name
+                    description
+                    primaryLanguage {
+                      color
+                      name
+                    }
+                    stargazers {
+                      totalCount
+                    }
+                    forkCount
+                    diskUsage
+                  }
+                }
+              }
+            }
+          }
+        `;
+
         // API 호출 함수
         async function fetchRepositories() {
             try {
@@ -40,36 +70,6 @@ function OpenSource() {
             setRepos(repos);
         });
     }, []);
-
-    // GitHub GraphQL API 엔드포인트
-    const GITHUB_GRAPHQL_API = 'https://api.github.com/graphql';
-
-// GraphQL 쿼리
-    const GET_REPOSITORIES_QUERY =
-        `
-          query {
-            user(login: "carefreelife98") { // 사용자명을 자신의 GitHub 사용자명으로 변경하세요.
-              repositories(first: 10) {
-                edges {
-                  node {
-                    url
-                    name
-                    description
-                    primaryLanguage {
-                      color
-                      name
-                    }
-                    stargazers {
-                      totalCount
-                    }
-                    forkCount
-                    diskUsage
-                  }
-                }
-              }
-            }
-          }
-        `;
 
     return (
         <div className="main" id="opensource">
