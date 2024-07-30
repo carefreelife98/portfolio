@@ -144,6 +144,11 @@ export const blogs = {
 			desc: "퍼블릭 클라우드 서비스를 활용하여 우체국 등기 영수증 / 사업자 등록증 자동 관리 시스템 구축",
 			url: "https://carefreelife98.github.io/toy-project/carefreeOCR2/"
 		},
+		{
+			title: "[CI/CD] CGV Fast Order 시스템 인프라 구축: Github Action - Docker / ArgoCD",
+			desc: "대규모 트래픽을 가진 어플리케이션의 K8s 클러스터 내 무중단 배포를 위한 CI/CD Pipeline 구축",
+			url: "https://carefreelife98.github.io/cloud-wave-project/project2_ci_githubActions_docker/"
+		},
 	],
 	view: true
 }
