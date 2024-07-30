@@ -39,8 +39,8 @@ export const skills = {
 	// Go to https://fontawesome.com/ and search icon
 	lists: [
 		{fontAwesome: "fab fa-java", text: "Java / Spring(+Boot)", proficiency: 80},
-		{fontAwesome: "fab fa-database", text: "MySQL", proficiency: 70},
-		{fontAwesome: "fab fa-file-code", text: "Couchbase, Redis", proficiency: 60},
+		{fontAwesome: "fas fa-database", text: "MySQL", proficiency: 70},
+		{fontAwesome: "far fa-file-code", text: "Couchbase, Redis", proficiency: 60},
 		{fontAwesome: "fab fa-react", text: "React", proficiency: 40},
 		{fontAwesome: "fab fa-aws", text: "AWS", proficiency: 30},
 		{fontAwesome: "fab fa-jira", text: "Jira", proficiency: 70},
