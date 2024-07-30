@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './OpenSource.css';
 import GithubCard from '../GithubCard/GithubCard';
@@ -6,6 +6,18 @@ import { openSourceProjects } from '../../portfolio';
 
 function OpenSource() {
     const [ repos, setRepos ] = useState([]);
+
+    useEffect(() => {
+        fetchRepositories().then((repos) => {
+            if (!repos) {
+                console.error('Github API Fetch 작업 실패 :: repos=' + repos.toString())
+                return;
+            }
+
+            if(repos.length > 6) repos.slice(0, 6);
+            setRepos(repos);
+        });
+    }, []);
 
     // GitHub GraphQL API 엔드포인트
     const GITHUB_GRAPHQL_API = 'https://api.github.com/graphql';
@@ -58,11 +70,6 @@ function OpenSource() {
             return [];
         }
     }
-
-    fetchRepositories().then((repos) => {
-        if(repos.length > 6) repos.slice(0, 6);
-        setRepos(repos)
-    });
 
     return (
         <div className="main" id="opensource">
