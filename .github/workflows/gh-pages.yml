@@ -24,10 +24,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
         
-      - name: Use Github Secrets
-        run: echo "REACT_APP_GITHUB_TOKEN = ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}" > ./portfolio-carefreelife98/.env.local
+      # - name: Use Github Secrets
+      #   run: echo "REACT_APP_GITHUB_TOKEN = ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}" > ./portfolio-carefreelife98/.env.local
+
+      # - name: Build
+      #   run: npm run build
+      #   working-directory: ./portfolio-carefreelife98
 
       - name: Build
+        env:
+          REACT_APP_GITHUB_TOKEN: ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}
         run: npm run build
         working-directory: ./portfolio-carefreelife98
 
