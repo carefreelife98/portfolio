@@ -35,7 +35,28 @@
     font-size: 25px;
     font-weight: 500;
 }
+
+.project-card-main-disabled .card-title {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
 .project-card-main .card-desc {
+    line-height: 1.4;
+    margin-top: 30px;
+    overflow-y: scroll; /* 스크롤바를 항상 표시 */
+    font-size: 20px;
+    font-weight: 300;
+    color: #c1c2c3;
+    cursor: pointer; /* 스크롤 가능 힌트 */
+    /* 삭제할 부분 */
+    /* display: -webkit-inline-box; */
+    /* -webkit-box-orient: vertical; */
+    /* -webkit-line-clamp: 2; */
+}
+
+.project-card-main-disabled .card-desc {
     line-height: 1.4;
     margin-top: 30px;
     overflow-y: scroll; /* 스크롤바를 항상 표시 */
@@ -54,6 +75,9 @@
         font-size: 22px;
     }
     .project-card-main .card-desc {
+        font-size: 16px;
+    }
+    .project-card-main-disabled .card-desc {
         font-size: 16px;
     }
 }
