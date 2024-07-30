@@ -22,16 +22,26 @@ function Contact() {
                         <p>{contactInfo.subTitle}</p>
                     </div>
                     <div className="contact-introduce">
-                        <p>{contactInfo.introduce}</p>
+                        <p>{contactInfo.name}</p>
+                    </div>
+                    <div className="contact-introduce">
+                        <p>{contactInfo.role}</p>
+                    </div>
+                    <div className="contact-introduce">
+                        <p>{contactInfo.address}</p>
+                    </div>
+                    <div className="contact-introduce">
+                        <p>{contactInfo.tel}</p>
                     </div>
                     <div className="social-links">
-                        <Social />
+                        <Social/>
                     </div>
                 </div>
-                
+
             </div>
         </section>
         </Fade>
     );
 }
+
 export default Contact;

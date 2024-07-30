@@ -156,10 +156,9 @@ export const blogs = {
 export const contactInfo = {
 	title: "Contact To Me! 📞",
 	subTitle: "Thank you for your time !",
-	introduce: emoji("Seung-Min Chae | 채승민 \n" +
-		"Backend Engineer, Dev Unit / Channel Service Dev. team\n" +
-		"------------------------------------------------------------------------------\n" +
-		"N Tower, 13F, 129, Teheran-ro, Gangnam-Gu, Seoul, 06133 Republic of Korea\n" +
-		"M. 010-2532-4903  l  E. carefreelife@qoo10.com / carefreelife@wemakeprice.com / carefreelife@tmon.co.kr / carefreelife@interparkshop.com\n"),
+	name: emoji("Seung-Min Chae | 채승민 "),
+	role: emoji("Backend Engineer, Dev Unit / Channel Service Dev. team"),
+	address: emoji("N Tower, 13F, 129, Teheran-ro, Gangnam-Gu, Seoul, 06133 Republic of Korea."),
+	tel: emoji("M. 010-2532-4903  l  E. carefreelife@qoo10.com / carefreelife@wemakeprice.com / carefreelife@tmon.co.kr / carefreelife@interparkshop.com\n"),
 	view: true
 }
