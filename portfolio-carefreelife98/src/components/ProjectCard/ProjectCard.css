@@ -23,13 +23,15 @@
 .project-card-main .card-desc {
     line-height: 1.4;
     margin-top: 30px;
-    display: -webkit-inline-box;
-    -webkit-box-orient: vertical;
-    overflow: auto;
+    overflow-y: scroll; /* 스크롤바를 항상 표시 */
     font-size: 20px;
     font-weight: 300;
     color: #c1c2c3;
-    -webkit-line-clamp: 2;
+    cursor: pointer; /* 스크롤 가능 힌트 */
+    /* 삭제할 부분 */
+    /* display: -webkit-inline-box; */
+    /* -webkit-box-orient: vertical; */
+    /* -webkit-line-clamp: 2; */
 }
 
 @media screen and (max-width: 1380px) {
