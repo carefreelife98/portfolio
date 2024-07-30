@@ -11,6 +11,14 @@ function OpenSource() {
         getRepoData(); // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    function encodeBase64(input: string): string {
+        return Buffer.from(input).toString('base64');
+    }
+
+    const githubSecrets: string | undefined = process.env.REACT_APP_GITHUB_TOKEN;
+    const encoded: string = 'Bearer ' + encodeBase64(githubSecrets as string);
+    console.log("Encoded:", encoded);
+
     function getRepoData(): void {
         // I don't know well about this part...
         const client = new ApolloClient({
@@ -18,7 +26,7 @@ function OpenSource() {
             request: (operation) => {
                 operation.setContext({
                     headers: {
-                        authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
+                        authorization: encoded,
                     },
                 });
             },
