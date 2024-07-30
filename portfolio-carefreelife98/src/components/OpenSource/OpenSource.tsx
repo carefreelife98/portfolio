@@ -12,7 +12,7 @@ function OpenSource() {
     }, []);
 
     function encodeBase64(input: string): string {
-        return Buffer.from(input).toString('base64');
+        return btoa(input);
     }
 
     const githubSecrets: string | undefined = process.env.REACT_APP_GITHUB_TOKEN;
