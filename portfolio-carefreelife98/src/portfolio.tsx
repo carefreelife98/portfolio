@@ -3,7 +3,7 @@ import emoji from 'react-easy-emoji';
 export const greeting = {
 	username: 'SeungMin Chae',
 	title: 'Hello I\'m SeungMin Chae',
-	subTitle: emoji("Build CarefreeLife ❤"),
+	subTitle: emoji("Build CarefreeLife 🧑🏻‍💻"),
 	role: "Backend Engineer",
 	resumeLink: "https://drive.google.com/file/d/1KogEXwOAXCfdr5SEKkr2GpSnG8CndqkU/view?usp=sharing",
 	// IMPORTANT
@@ -39,15 +39,15 @@ export const skills = {
 	// Go to https://fontawesome.com/ and search icon
 	lists: [
 		{fontAwesome: "fab fa-java", text: "Java / Spring", proficiency: 80},
-		{fontAwesome: "fa-brands fa-python", text: "Python", proficiency: 80},
-		{fontAwesome: "fa-brands fa-js", text: "JS", proficiency: 40},
 		{fontAwesome: "fas fa-database", text: "MySQL", proficiency: 70},
+		{fontAwesome: "fa-brands fa-git", text: "Git", proficiency: 70},
+		{fontAwesome: "fab fa-jira", text: "Jira", proficiency: 70},
+		{fontAwesome: "fa-brands fa-python", text: "Python", proficiency: 60},
 		{fontAwesome: "far fa-file-code", text: "Couchbase, Redis", proficiency: 60},
+		{fontAwesome: "fa-regular fa-envelope", text: "Kafka", proficiency: 50},
+		{fontAwesome: "fa-brands fa-js", text: "JS", proficiency: 40},
 		{fontAwesome: "fab fa-react", text: "React", proficiency: 40},
 		{fontAwesome: "fab fa-aws", text: "AWS", proficiency: 30},
-		{fontAwesome: "fa-brands fa-git", text: "Git", proficiency: 70},
-		{fontAwesome: "fa-brands fa-bitbucket", text: "Bitbucket", proficiency: 70},
-		{fontAwesome: "fab fa-jira", text: "Jira", proficiency: 70},
 	],
 	view: true
 };
