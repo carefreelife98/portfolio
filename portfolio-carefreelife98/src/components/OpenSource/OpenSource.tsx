@@ -37,7 +37,7 @@ function OpenSource() {
                     <GithubCard repos={repo} key={i} />
                 ))}
             </div>
-            <a href="https://github.com/Ikalli" target="_blank" rel="noopener noreferrer">More Projects</a>
+            <a href="https://github.com/carefreelife98" target="_blank" rel="noopener noreferrer">More Projects</a>
         </div>
     );
 }
