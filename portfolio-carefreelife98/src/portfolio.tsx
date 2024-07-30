@@ -15,7 +15,7 @@ export const socialMediaLinks = {
 	// IMPORTANT
 	// if you don't have, change value to blank or false!! DO NOT DELETE!
 	github: 'https://github.com/carefreelife98',
-	linkedin: 'www.linkedin.com/in/seung-min-chae-608004285',
+	linkedin: 'https://www.linkedin.com/in/seung-min-chae-608004285',
 	email: 'csm12180318@gmail.com',
 	facebook: '',
 	twitter: "",
