@@ -53,22 +53,14 @@ function OpenSource() {
                 );
 
                 const repos = response.data.data.user.repositories.edges.map((edge: { node: any; }) => edge.node);
-                return repos;
+                setRepos(repos.slice(0, 6));
             } catch (error) {
                 console.error('Error fetching repositories:', error);
-                return [];
+                setRepos([]);
             }
         }
 
-        fetchRepositories().then((repos) => {
-            if (!repos) {
-                console.error('Github API Fetch 작업 실패 :: repos=' + repos.toString())
-                return;
-            }
-
-            if(repos.length > 6) repos.slice(0, 6);
-            setRepos(repos);
-        });
+        fetchRepositories().then(r => console.log('github api result: ' + r));
     }, []);
 
     return (
