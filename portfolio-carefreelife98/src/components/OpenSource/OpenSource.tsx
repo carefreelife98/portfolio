@@ -51,7 +51,7 @@ function OpenSource() {
                 }
             );
 
-            const repos = response.data.data.user.repositories.edges.map((edge) => edge.node);
+            const repos = response.data.data.user.repositories.edges.map((edge: { node: any; }) => edge.node);
             return repos;
         } catch (error) {
             console.error('Error fetching repositories:', error);
