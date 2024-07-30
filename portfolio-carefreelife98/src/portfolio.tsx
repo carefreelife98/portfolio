@@ -100,13 +100,13 @@ export const projects = {
 			title: "Couchbase 를 통한 문서 관리 및 통합 데이터 유효성 검증 프로젝트",
 			type: "실무 프로젝트",
 			desc: "규모: 약 10 개 팀 관여. 기술 스택: Java / Spring / MySQL, MyBatis / Couchbase / Ehcache, Memcached ...etc 담당 업무: 비즈니스 로직에 따른 DB 접근 시 CB 문서 존재 여부 확인 및 유효성 검증 후 결과 값의 캐싱.",
-			url: "#"
+			url: ""
 		},
 		{
 			title: "홈 화면의 배너 이미지 외부 연동",
 			type: "실무 프로젝트",
-			desc: "작성 예정입니다.",
-			url: "#"
+			desc: "규모: 10 개 미만 팀 참여. 기술 스택: Java / Spring / MySQL, MyBatis 담당 업무: MSA 아키텍쳐에서 비즈니스 로직에 의한 트리거 발생 및 데이터 인입 시 데이터 검증, 추가, 가공, 저장 후 스케줄링 설정.",
+			url: ""
 		},
 	],
 	view: true
