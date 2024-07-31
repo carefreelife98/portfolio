@@ -4,6 +4,17 @@ import './OpenSource.css';
 import GithubCard from '../GithubCard/GithubCard';
 import { openSourceProjects } from '../../portfolio';
 
+// Define the interface for the repository data
+interface Repo {
+    html_url: string;
+    name: string;
+    description: string | null;
+    language: string | null;
+    stargazers_count: number;
+    forks_count: number;
+    size: number;
+}
+
 function OpenSource() {
     const [repos, setRepos] = useState([]);
 
@@ -22,7 +33,7 @@ function OpenSource() {
                 });
 
                 // Extract relevant repository data
-                const repos = response.data.map((repo: { html_url: any; name: any; description: any; language: any; stargazers_count: any; forks_count: any; size: any; }) => ({
+                const repos = response.data.map((repo: Repo) => ({
                     url: repo.html_url,
                     name: repo.name,
                     description: repo.description,
@@ -42,7 +53,7 @@ function OpenSource() {
             }
         }
 
-        fetchRepositories();
+        fetchRepositories().then(r => console.log('fetch result: ' + r));
     }, []);
 
     return (
