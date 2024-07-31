@@ -12,6 +12,8 @@
 .achieve-card .achieve-card-img img{
     display: block;
     max-width: 250px;
+    border-radius: 40px;
+
     height: auto;
     margin: 0 auto;
 }
