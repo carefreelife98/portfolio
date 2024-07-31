@@ -15,6 +15,8 @@
 	margin: 0 auto;
 }
 .section--hello .wrapper {
+	display: flex;
+	flex-direction: column;
 	color: #f1f2f3;
 }
 .section--hello .text-title {
@@ -33,8 +35,8 @@
 	height: auto;
 }
 .section--hello .hello-image-box .hello-image {
-	width: 100%;
-	height: 100%;
+	width: auto;
+	height: auto;
 	border-radius: 40px;
 	object-fit: contain; /* 또는 cover, fill, scale-down */
 }
