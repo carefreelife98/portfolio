@@ -4,7 +4,7 @@
 	margin-top: 10%;
 	margin-bottom: 0;
 	text-align: center;
-	height: 90vh;
+	min-height: 90vh;
 	box-sizing: border-box;
 	display: flex;
 	justify-content: center;
@@ -67,6 +67,9 @@
 	border-radius: 16px;
 	text-align: center;
 	transition: 0.3s ease-out;
+
+	position: relative;
+	z-index: 1;
 }
 .section--hello .wrapper-links > *:hover {
 	background-color: #ffffff;
@@ -117,6 +120,7 @@
 	.section--hello {
 		margin-top: 80px;
 		padding: 5vh 20px;
+		height: auto;
 	}
 	.section--hello .inner {
 		display: block;
