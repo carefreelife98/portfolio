@@ -2,9 +2,9 @@ import React from 'react';
 import './Hello.css';
 import { greeting } from '../../portfolio';
 import Social from '../Social/Social';
-import { Fade } from "react-reveal";
 
 function Hello() {
+	const Fade = require('react-reveal/Fade')
 	return (
 		<section className="section--hello">
 			<div className="inner">
