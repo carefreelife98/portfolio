@@ -29,8 +29,8 @@
 	animation: hello 1.8s linear infinite;
 }
 .section--hello .hello-image-box {
-	width: 100%;
-	height: 100%;
+	width: auto;
+	height: auto;
 }
 .section--hello .hello-image-box .hello-image {
 	width: 100%;
