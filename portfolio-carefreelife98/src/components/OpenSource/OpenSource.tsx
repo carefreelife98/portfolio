@@ -46,9 +46,12 @@ function OpenSource() {
                         forkCount: repo.forks_count || 0,
                         diskUsage: repo.size || 0,
                     }
-                }));
+                })).sort((a: { node: { diskUsage: number; }; }, b: { node: { diskUsage: number; }; }) =>
+                    b.node.diskUsage - a.node.diskUsage
+                ); // 내림차순 정렬
 
                 setRepos(repos.slice(0, 6));
+                repos.sort()
                 setIsLoading(false);
             } catch (error) {
                 console.error('Error fetching repositories:', error);
