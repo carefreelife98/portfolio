@@ -32,20 +32,20 @@ function OpenSource() {
                     },
                 });
 
-                // Extract relevant repository data
                 const repos = response.data.map((repo: Repo) => ({
-                    url: repo.html_url,
-                    name: repo.name,
-                    description: repo.description,
+                    url: repo.html_url || '',
+                    name: repo.name || 'Unknown',
+                    description: repo.description || 'No description provided',
                     primaryLanguage: {
-                        name: repo.language,
+                        name: repo.language || 'Unknown',
                     },
                     stargazers: {
-                        totalCount: repo.stargazers_count,
+                        totalCount: repo.stargazers_count || 0,
                     },
-                    forkCount: repo.forks_count,
-                    diskUsage: repo.size,
+                    forkCount: repo.forks_count || 0,
+                    diskUsage: repo.size || 0,
                 }));
+
                 setRepos(repos.slice(0, 6));
             } catch (error) {
                 console.error('Error fetching repositories:', error);
@@ -60,9 +60,8 @@ function OpenSource() {
         <div className="main" id="opensource">
             <h1 className="project-title">{openSourceProjects.title}</h1>
             <div className="repo-cards">
-                {repos.map((repo, i) => {
-                    return <GithubCard repos={repo} key={i} />;
-                })}
+                {/*Repo 데이터가 존재하면 사용*/}
+                {repos.map((repo, i) => repo && <GithubCard repos={repo} key={i} />)}
             </div>
             <a href="https://github.com/carefreelife98" target="_blank" rel="noopener noreferrer">More Projects</a>
         </div>
