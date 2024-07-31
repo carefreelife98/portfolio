@@ -19,7 +19,7 @@ function Hello() {
 						<img className="hello-image"
 							 src={`${process.env.PUBLIC_URL}/assets/image/profile/${greeting.image}`}
 							 alt='hello-image'/>&nbsp;
-						<span className="hello-emoji">👋</span>
+						{/*<span className="hello-emoji">👋</span>*/}
 					</div>
 					<div className="role">
 						<span>{greeting.role}</span>

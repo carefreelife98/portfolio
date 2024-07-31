@@ -2,7 +2,7 @@ import emoji from 'react-easy-emoji';
 
 export const greeting = {
 	username: 'SeungMin Chae',
-	title: 'Hello I\'m SeungMin Chae',
+	title: 'Hello, I\'m SeungMin Chae',
 	image: "profile.jpeg",
 	role: "Backend Engineer",
 	subTitle: emoji("Build CarefreeLife 🧑🏻‍💻"),
