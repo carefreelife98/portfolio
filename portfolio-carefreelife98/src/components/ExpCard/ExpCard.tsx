@@ -8,7 +8,7 @@ function ExpCard({ experience }: Props) {
         <div className="expcard-main">
             <div className="inner">
 
-                <img className="expcard-company-image" src={`/assets/image/company/${experience.image}`} alt='company-image'></img>
+                <img className="expcard-company-image" src={require(`../../assets/image/company/${experience.image}`).default} alt='company-image'/>
                 <div className="expcard-company">
                     {experience.company}
                 </div>
