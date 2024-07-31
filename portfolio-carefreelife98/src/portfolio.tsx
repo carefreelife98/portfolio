@@ -70,7 +70,7 @@ export const experience = {
 }
 
 export const openSourceProjects = {
-	title: emoji("Open Source Projects 💻 (Github API 연결 대기중입니다.)"),
+	title: emoji("[Github] Best Repositories 💻"),
 	view: true
 }
 
