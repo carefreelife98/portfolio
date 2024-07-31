@@ -8,7 +8,9 @@ function ExpCard({ experience }: Props) {
         <div className="expcard-main">
             <div className="inner">
 
-                <img className="expcard-company-image" src={`${process.env.PUBLIC_URL}/assets/image/company/${experience.image}`} alt='company-image'/>
+                <div className='expcard-company-image-box'>
+                    <img className="expcard-company-image" src={`${process.env.PUBLIC_URL}/assets/image/company/${experience.image}`} alt='company-image'/>
+                </div>
                 <div className="expcard-company">
                     {experience.company}
                 </div>
