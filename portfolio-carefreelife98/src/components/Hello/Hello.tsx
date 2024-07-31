@@ -15,7 +15,7 @@ function Hello() {
 						{greeting.title}&nbsp;
 						<span className="hello-emoji">👋</span>
 					</div>
-					<div className="hello-image-box">
+					<div className="role">
 						<img className="hello-image"
 							 src={`${process.env.PUBLIC_URL}/assets/image/profile/${greeting.image}`}
 							 alt='hello-image'/>&nbsp;
