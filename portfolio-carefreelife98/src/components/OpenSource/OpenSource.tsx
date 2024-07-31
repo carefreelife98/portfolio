@@ -56,7 +56,7 @@ function OpenSource() {
             }
         }
 
-        fetchRepositories().then(r => console.log('fetch result: ' + r));
+        fetchRepositories();
     }, []);
 
     return (
