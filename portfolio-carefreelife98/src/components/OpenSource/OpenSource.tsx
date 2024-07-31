@@ -33,17 +33,20 @@ function OpenSource() {
                 });
 
                 const repos = response.data.map((repo: Repo) => ({
-                    url: repo.html_url || '',
-                    name: repo.name || 'Unknown',
-                    description: repo.description || 'No description provided',
-                    primaryLanguage: {
-                        name: repo.language || 'Unknown',
-                    },
-                    stargazers: {
-                        totalCount: repo.stargazers_count || 0,
-                    },
-                    forkCount: repo.forks_count || 0,
-                    diskUsage: repo.size || 0,
+                    node: {  // 'node' 객체로 감싸기
+                        url: repo.html_url || '',
+                        name: repo.name || 'Unknown',
+                        description: repo.description || 'No description provided',
+                        primaryLanguage: repo.language ? {
+                            name: repo.language,
+                            color: null  // color 정보가 없으므로 null로 설정
+                        } : null,
+                        stargazers: {
+                            totalCount: repo.stargazers_count || 0,
+                        },
+                        forkCount: repo.forks_count || 0,
+                        diskUsage: repo.size || 0,
+                    }
                 }));
 
                 setRepos(repos.slice(0, 6));
@@ -61,7 +64,7 @@ function OpenSource() {
             <h1 className="project-title">{openSourceProjects.title}</h1>
             <div className="repo-cards">
                 {/*Repo 데이터가 존재하면 사용*/}
-                {repos.map((repo, i) => repo && <GithubCard repos={repo} key={i} />)}
+                {repos.map((repo, i) => repo && <GithubCard repos={{ node: repo }} key={i} />)}
             </div>
             <a href="https://github.com/carefreelife98" target="_blank" rel="noopener noreferrer">More Projects</a>
         </div>
