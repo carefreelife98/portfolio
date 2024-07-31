@@ -15,6 +15,12 @@ function Hello() {
 						{greeting.title}&nbsp;
 						<span className="hello-emoji">👋</span>
 					</div>
+					<div className="hello-image-box">
+						<img className="hello-image"
+							 src={`${process.env.PUBLIC_URL}/assets/image/profile/${greeting.image}`}
+							 alt='hello-image'/>&nbsp;
+						<span className="hello-emoji">👋</span>
+					</div>
 					<div className="role">
 						<span>{greeting.role}</span>
 					</div>
@@ -22,11 +28,12 @@ function Hello() {
 						<span>{greeting.subTitle}</span>
 					</div>
 					<div className="social-links">
-						<Social />
+						<Social/>
 					</div>
 					<div className="wrapper-links">
 						<a href="#contact" id="about">Contact &gt;</a>
-						<a href={greeting.resumeLink} id="resume" target="_blank" rel="noopener noreferrer">View Resume &gt;</a>
+						<a href={greeting.resumeLink} id="resume" target="_blank" rel="noopener noreferrer">View
+							Resume &gt;</a>
 					</div>
 				</div>
 
@@ -35,4 +42,5 @@ function Hello() {
 		</Fade>
 	);
 }
+
 export default Hello;

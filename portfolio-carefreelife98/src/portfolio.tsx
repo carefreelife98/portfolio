@@ -3,8 +3,9 @@ import emoji from 'react-easy-emoji';
 export const greeting = {
 	username: 'SeungMin Chae',
 	title: 'Hello I\'m SeungMin Chae',
-	subTitle: emoji("Build CarefreeLife 🧑🏻‍💻"),
+	image: "profile.jpeg",
 	role: "Backend Engineer",
+	subTitle: emoji("Build CarefreeLife 🧑🏻‍💻"),
 	resumeLink: "https://drive.google.com/file/d/1KogEXwOAXCfdr5SEKkr2GpSnG8CndqkU/view?usp=sharing",
 	// IMPORTANT
 	// If you don't want to show this, change view to false. DO NOT DELETE!

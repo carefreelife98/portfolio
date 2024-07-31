@@ -28,6 +28,17 @@
 	transform-origin: 80% 80%;
 	animation: hello 1.8s linear infinite;
 }
+.section--hello .hello-image-box {
+	width: 100%;
+	height: 100%;
+}
+.section--hello .hello-image-box .hello-image {
+	width: 100%;
+	height: 100%;
+	border-radius: 40px;
+	object-fit: contain; /* 또는 cover, fill, scale-down */
+}
+
 .section--hello .role {
 	margin-top: 70px;
 	font-size: 35px;
