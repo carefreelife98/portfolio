@@ -7,12 +7,13 @@ function ExpCard({ experience }: Props) {
         <Fade duration={800} bottom>
         <div className="expcard-main">
             <div className="inner">
-                    
-                <div className="expcard-role">
-                    {experience.role}
-                </div>
+
+                <img className="expcard-company-image" src={`../../assets/image/company/${experience.image}`} alt='company-image'></img>
                 <div className="expcard-company">
                     {experience.company}
+                </div>
+                <div className="expcard-role">
+                    {experience.role}
                 </div>
                 <div className="expcard-date">
                     {experience.date}
@@ -23,10 +24,12 @@ function ExpCard({ experience }: Props) {
         </Fade>
     );
 }
+
 interface Props {
-    experience : {
-        role: string,
+    experience: {
+        image: string,
         company: string,
+        role: string,
         date: string | number
     }
 }

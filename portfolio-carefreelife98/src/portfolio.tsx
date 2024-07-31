@@ -55,15 +55,18 @@ export const skills = {
 export const experience = {
 	title: "Work / Education Experience",
 	lists: [
+		// image: src/assets/image/company 폴더 내부 이미지 명 (확장자 포함).
 		{
-			date: "2023.07 ~ 2023.09",
+			image: "cloud-wave.png",
 			company: "CJ Olivenetworks - Cloud Wave 1st",
 			role: "Public Cloud Education",
+			date: "2023.07 ~ 2023.09",
 		},
 		{
-			date: "2024.01 ~ now",
+			image: "tmon.gif",
 			company: "Qoo10 Technologies - TMON",
 			role: "Channel Service Dev. Team, Backend Engineer",
+			date: "2024.01 ~ now",
 		},
 	],
 	view: true

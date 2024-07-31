@@ -12,11 +12,14 @@
 .expcard-main:hover {
     box-shadow: 0 4px 8px rgba(38,38,38,0.2);
 }
-.expcard-main .expcard-role {
-    font-weight: 500;
+.expcard-main .expcard-company-image {
+    margin-top: 20px;
 }
 .expcard-main .expcard-company {
     margin-top: 30px;
+}
+.expcard-main .expcard-role {
+    font-weight: 500;
 }
 .expcard-main .expcard-date {
     font-size: 20px;
@@ -26,11 +29,14 @@
 }
 
 @media screen and (max-width: 1380px) {
-    .expcard-main .expcard-role {
-        font-size: 22px;
+    .expcard-main .expcard-company-image {
+
     }
     .expcard-main .expcard-company {
         font-size: 19px;
+    }
+    .expcard-main .expcard-role {
+        font-size: 22px;
     }
     .expcard-main .expcard-date {
         font-size: 16px;
