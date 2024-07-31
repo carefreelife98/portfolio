@@ -82,30 +82,35 @@ export const projects = {
 	subTitle: "Recent Projects",
 	lists: [
 		{
+			image: "smart_barricade.png",
 			title: "Smart Barricade",
 			type: "개인 프로젝트",
 			desc: "우회전 교통사고 방지를 위한 전자 방지턱 시스템",
 			url: "https://carefreelife98.github.io/inu-capstone/capstone-admin-server/"
 		},
 		{
+			image: "",
 			title: "[CJ Olivenetworks - Cloud Wave 1기] CGV Fast Order",
 			type: "팀 프로젝트",
 			desc: "[패스트오더] 서비스의 AWS 인프라 현황을 기반으로 대규모 사용자가 동시에 사용하는데 무리가 없는 인프라 아키텍처를 설계.",
 			url: "https://carefreelife98.github.io/Cloud-Wave-Project/"
 		},
 		{
+			image: "",
 			title: "Carefree OCR v2: 우체국 등기 영수증 / 사업자 등록증 자동 관리 시스템",
 			type: "개인 프로젝트",
 			desc: "AWS / NCP 퍼블릭 클라우드 서비스를 활용하여 우체국 등기 영수증 / 사업자 등록증 자동 관리 시스템 구축",
 			url: "https://carefreelife98.github.io/toy-project/carefreeOCR2/"
 		},
 		{
+			image: "",
 			title: "Couchbase 를 통한 문서 관리 및 통합 데이터 유효성 검증 프로젝트",
 			type: "실무 프로젝트",
 			desc: "규모: 약 10 개 팀 관여. 기술 스택: Java / Spring / MySQL, MyBatis / Couchbase / Ehcache, Memcached ...etc 담당 업무: 비즈니스 로직에 따른 DB 접근 시 CB 문서 존재 여부 확인 및 유효성 검증 후 결과 값의 캐싱.",
 			url: ""
 		},
 		{
+			image: "",
 			title: "비즈니스 로직에 따른 메인 페이지 전시 데이터 외부 연동 및 가공",
 			type: "실무 프로젝트",
 			desc: "규모: 10 개 미만 팀 참여. 기술 스택: Java / Spring / MySQL, MyBatis 담당 업무: MSA 아키텍쳐에서 비즈니스 로직에 의한 트리거 발생 및 데이터 인입 시 데이터 검증, 추가, 가공, 저장 후 스케줄링 설정.",

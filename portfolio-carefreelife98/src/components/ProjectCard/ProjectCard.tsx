@@ -5,7 +5,11 @@ function ProjectCard({ project }: Props) {
     const Fade = require('react-reveal/Fade');
     return (
         <Fade duration={800} bottom>
-            <a className={project.type === '실무 프로젝트' ? "project-card-main-disabled" : "project-card-main"} href={project.url}>
+            <a className={project.type === '실무 프로젝트' ? "project-card-main-disabled" : "project-card-main"}
+               href={project.url}>
+                <div className="card-image-box">
+                    <img className="card-image" src={`${process.env.PUBLIC_URL}/assets/image/project/${project.image}`} alt='project-image'/>
+                </div>
                 <div className="card-title">
                     <p>{project.title}</p>
                 </div>
@@ -22,6 +26,7 @@ function ProjectCard({ project }: Props) {
 
 interface Props {
     project: {
+        image: string,
         title: string,
         type: string,
         desc: string,
