@@ -1,58 +1,40 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './OpenSource.css';
 import GithubCard from '../GithubCard/GithubCard';
 import { openSourceProjects } from '../../portfolio';
 
 function OpenSource() {
-    const [ repos, setRepos ] = useState([]);
+    const [repos, setRepos] = useState([]);
 
     useEffect(() => {
-        // GitHub GraphQL API 엔드포인트
-        const GITHUB_GRAPHQL_API = 'https://api.github.com/graphql';
+        // GitHub REST API endpoint for fetching user repositories
+        const GITHUB_REST_API = 'https://api.github.com/users/carefreelife98/repos';
 
-        // GraphQL 쿼리
-        const GET_REPOSITORIES_QUERY =
-            `
-          query {
-            user(login: "carefreelife98") { // 사용자명을 자신의 GitHub 사용자명으로 변경하세요.
-              repositories(first: 10) {
-                edges {
-                  node {
-                    url
-                    name
-                    description
-                    primaryLanguage {
-                      color
-                      name
-                    }
-                    stargazers {
-                      totalCount
-                    }
-                    forkCount
-                    diskUsage
-                  }
-                }
-              }
-            }
-          }
-        `;
-
-        // API 호출 함수
+        // API call function
         async function fetchRepositories() {
             try {
-                const response = await axios.post(
-                    GITHUB_GRAPHQL_API,
-                    { query: GET_REPOSITORIES_QUERY },
-                    {
-                        headers: {
-                            'Content-Type': 'application/json',
-                            // 'Authorization': `Bearer YOUR_PERSONAL_ACCESS_TOKEN`, // 비공개 데이터를 가져오려면 토큰을 여기에 추가하세요.
-                        },
-                    }
-                );
+                const response = await axios.get(GITHUB_REST_API, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        // 'Authorization': `Bearer YOUR_PERSONAL_ACCESS_TOKEN`, // Uncomment if using a token for authenticated requests
+                    },
+                });
 
-                const repos = response.data.data.user.repositories.edges.map((edge: { node: any; }) => edge.node);
+                // Extract relevant repository data
+                const repos = response.data.map((repo: { html_url: any; name: any; description: any; language: any; stargazers_count: any; forks_count: any; size: any; }) => ({
+                    url: repo.html_url,
+                    name: repo.name,
+                    description: repo.description,
+                    primaryLanguage: {
+                        name: repo.language,
+                    },
+                    stargazers: {
+                        totalCount: repo.stargazers_count,
+                    },
+                    forkCount: repo.forks_count,
+                    diskUsage: repo.size,
+                }));
                 setRepos(repos.slice(0, 6));
             } catch (error) {
                 console.error('Error fetching repositories:', error);
@@ -60,7 +42,7 @@ function OpenSource() {
             }
         }
 
-        fetchRepositories().then(r => console.log('github api result: ' + r));
+        fetchRepositories();
     }, []);
 
     return (
@@ -71,8 +53,9 @@ function OpenSource() {
                     return <GithubCard repos={repo} key={i} />;
                 })}
             </div>
-            <a href="https://github.com/CarefreeLife98" target="_blank" rel="noopener noreferrer">More Projects</a>
+            <a href="https://github.com/carefreelife98" target="_blank" rel="noopener noreferrer">More Projects</a>
         </div>
     );
 }
+
 export default OpenSource;
