@@ -11,10 +11,16 @@
 	align-items: center;
 }
 .section--hello .inner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	max-width: 1600px;
 	margin: 0 auto;
 }
 .section--hello .wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 	color: #f1f2f3;
 }
 .section--hello .text-title {
