@@ -6,7 +6,7 @@ export const greeting = {
 	image: "profile.jpeg",
 	role: "Backend Engineer",
 	subTitle: emoji("Build CarefreeLife 🧑🏻‍💻"),
-	resumeLink: "https://drive.google.com/file/d/1KogEXwOAXCfdr5SEKkr2GpSnG8CndqkU/view?usp=sharing",
+	resumeLink: "https://drive.google.com/file/d/1lEI_W4_c3j4yjEcMcwXbcDttE_t0kQSw/view?usp=sharing",
 	// IMPORTANT
 	// If you don't want to show this, change view to false. DO NOT DELETE!
 	view: true
